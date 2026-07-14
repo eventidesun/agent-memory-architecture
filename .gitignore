@@ -1,0 +1,21 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+.idea/
+
+.env
+
+.DS_Store
+
+test_results.csv
+
+backend-testing.txt
+
+chat_logs.csv
