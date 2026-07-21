@@ -1,0 +1,9 @@
+probe_id,probe_text,category,gold_id,distractor_id,top1_id,top1_distance,gold_rank,gold_distance,distractor_rank,distractor_distance,distractor_beat_gold,gold_in_top3,pass_top1
+P01,I need to go soon.,causal,M02,M01,M02,1.3988,1,1.3988,5,1.7469,False,True,True
+P02,Is there anything you were going to show me?,commitment_promise,M03,M06,M03,1.3679,1,1.3679,5,1.615,False,True,True
+P03,"Sorry, what was it we said we'd do down below?",narrative_continuity,M06,M03,M02,1.5743,2,1.5891,3,1.6092,False,True,False
+P04,"I forgot to write down our plan, oops.",affective_consequence,M04,M07,M07,1.3359,4,1.7603,1,1.3359,True,False,False
+P05,Why should you be careful joking about forgetting things with me?,person_conditioned_salience,M04,M07,M04,1.1859,1,1.1859,2,1.309,False,True,True
+P06,What could we watch together that I'd actually enjoy?,person_conditioned_salience,M08,M05,M05,1.3659,4,1.686,1,1.3659,True,False,False
+P07,"That humming sound is kind of comforting, isn't it?",lexical_control,M08,M05,M08,1.0322,1,1.0322,7,1.8959,False,True,True
+P08,Does anyone even know I'm out here?,lexical_control,M01,M02,M01,1.418,1,1.418,2,1.5838,False,True,True

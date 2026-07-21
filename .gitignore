@@ -14,8 +14,7 @@ env/
 
 .DS_Store
 
-test_results.csv
-
 backend-testing.txt
 
 chat_logs.csv
+.idea/
