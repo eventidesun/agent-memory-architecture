@@ -1,0 +1,18 @@
+[
+  {
+    "probe_id": "PILOT_01",
+    "query": "what did you say you'd do?",
+    "gold_ids": ["PILOT_1"],
+    "distractor_ids": ["PILOT_0"],
+    "property_tags": ["pilot", "promise"],
+    "pair_id": null
+  },
+  {
+    "probe_id": "PILOT_02",
+    "query": "what am I afraid of?",
+    "gold_ids": ["PILOT_0"],
+    "distractor_ids": ["PILOT_2"],
+    "property_tags": ["pilot", "preference"],
+    "pair_id": null
+  }
+]

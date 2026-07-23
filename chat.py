@@ -83,7 +83,7 @@ def get_response(participant_id, session, condition, user_message, room=1, first
     lumen_response = response.choices[0].message.content
 
     if condition == "memory":
-        store_memory(participant_id, user_message, lumen_response)
+        store_memory(participant_id, user_message, lumen_response, session)
 
     log_message(participant_id, condition, session, "user", user_message)
     log_message(participant_id, condition, session, "lumen", lumen_response)

@@ -14,3 +14,9 @@
    ACT-R's fan-based S_ki, not a reimplementation.
 5. Salience: modulates B_i (higher initial encoding and/or reduced
    decay rate d). It is never an additive term. (McGaugh, 2004.)
+
+### Condition D — type inference [July 23rd, 2026]
+D infers probe type via an LLM call at query time. D does NOT read the
+probe's property tags. Rationale: reading the tag hands D an oracle
+signal that C does not receive, making the C-vs-D comparison unfair.
+D's type-inference accuracy is reported as a result.

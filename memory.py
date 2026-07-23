@@ -1,17 +1,43 @@
 import chromadb
-from dataclasses import dataclass          # ← NEW: add this import at the top
+from dataclasses import dataclass
 
 client = chromadb.Client()
 
 def get_or_create_collection(participant_id):
     return client.get_or_create_collection(name=f"participant_{participant_id}")
 
-def store_memory(participant_id, user_message, lumen_response):
+def store_memory(participant_id, user_message, lumen_response, session_id, metadata=None):
+    """Store one conversation exchange.
+
+    Each memory is assigned a session ID when it is written, following
+    MAPPING_DECISIONS §5.3, decision 1. This avoids having to reconstruct
+    session information later.
+
+    The metadata argument is optional. By default, each memory stores the
+    speaker, session ID, timestamp, and labelling status. The batch labelling
+    process later adds the memory type, salience, and importance so that
+    labelling does not affect the live chat path.
+
+    Because time is measured by session, the timestamp is the session number
+    stored as a float rather than a wall-clock time.
+    """
     collection = get_or_create_collection(participant_id)
+
+    base_metadata = {
+        "speaker": participant_id,
+        "session_id": session_id,
+        "timestamp": float(session_id),
+        "labelled": False,
+    }
+    if metadata:
+        base_metadata.update(metadata)
+
     collection.add(
         documents=[f"Participant: {user_message}\nLumen: {lumen_response}"],
-        ids=[f"{participant_id}_{collection.count()}"]
+        ids=[f"{participant_id}_{collection.count()}"],
+        metadatas=[base_metadata],
     )
+
 
 def retrieve_memory(participant_id, current_message, n_results=3):
     # ── your existing function, UNCHANGED ──
