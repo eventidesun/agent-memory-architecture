@@ -29,5 +29,55 @@ and exactly one presentation, computed across a fixed set of eight generic
 queries at current_time = 6.0 (one session after the corpus ends).
 
 Rationale: the threshold is anchored to the memory profile the model is
-designed to shed — old, low-salience, unrepeated. Derived from corpus
+designed to shed, old, low-salience, unrepeated. Derived from corpus
 properties only; no probe outcomes are consulted.
+
+### Presentation logs — authoring rule
+
+A memory receives an additional presentation in each later session where its
+subject is raised again. Ten of 46 memories qualify; the remaining 36 have a
+single presentation at their write session.
+
+Logs are authored rather than accumulated from E's own retrievals, so that all
+five conditions see identical presentation histories and no condition is
+evaluated against a store shaped by another condition's behaviour.
+
+### Cue weights — equal-variance derivation 
+
+Principle (stated before computing): each cue contributes equal variance to
+S_i. The cues differ in natural scale, cosine similarity is continuous over a
+narrow band, speaker identity is a binary indicator, and no prior justifies
+treating one scale as intrinsically more informative.
+
+W_TOTAL = 11.0 is Honda et al.'s reported weight on semantic spreading
+activation (HAI '25). Their model has one cue, so adopting it as a total for a
+two-cue model is an extension of their setting, not a value they report.
+
+Weights are set inversely proportional to each cue's standard deviation across
+all query-memory pairs in the corpus, normalised to sum to W_TOTAL. Queries are
+the corpus's own user messages, the utterance distribution E is queried with at
+runtime. Variance is computed over all pairs without filtering, matching E's
+candidate set, which is the whole store.
+
+Computed by activation/derive_weights.py:
+  sigma_utterance = 0.1469
+  sigma_speaker   = 0.4716
+  W = {"utterance": 8.3877, "speaker": 2.6123}
+
+The resulting numbers are corpus-dependent by design, in the same way a
+z-score's mean and SD are dataset-dependent without the standardisation
+procedure itself being tuned. The principle is what is frozen; the numbers
+follow from it.
+
+### Retrieval threshold τ — derivation rule 
+Written before computing τ.
+
+τ is the mean activation of memories with session_id ≤ 2, salience ≤ 0.3, and
+exactly one presentation, computed across the corpus's own user messages as
+queries at current_time = 6.0 (one session after the corpus ends).
+
+Rationale: the threshold is anchored to the memory profile the model is designed
+to shed, old, low-salience, unrepeated. Derived from corpus properties only; no
+probe outcomes are consulted.
+
+Computed by experiments/derive_tau.py: τ = 1.817

@@ -16,7 +16,7 @@ W = {"utterance": 8.3877, "speaker": 2.6123}
 # derived primary: sigma_u=0.1469, sigma_s=0.4716
 
 # Set from corpus activation distributions before evaluation.
-TAU = None
+TAU = 1.817
 
 # Prevents division by zero for same-session presentations.
 MIN_ELAPSED = 0.1
