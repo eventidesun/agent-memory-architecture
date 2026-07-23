@@ -1,8 +1,3 @@
-"""Level 1: mechanism evaluation. C, D, E -> ranked IDs on all probes.
-A and B run for documentation but are excluded from top-k comparison
-(DESIGN 7.1). E runs reinforce=False: evaluation must not mutate the
-store. Raw records only; metrics downstream."""
-
 import json
 import os
 
@@ -15,13 +10,17 @@ from retrievers.activation import ActivationRetriever
 from experiments.records import build_record, append_record
 
 SEED = 0
-K = 3
+K = 49
 OUT = "results/raw/level1.jsonl"
 
 
-def run(probes_path: str, participant_id: str, current_time: float,
-        session_id: int) -> None:
-    with open(probes_path) as f:
+def run(
+    probes_path: str,
+    participant_id: str,
+    current_time: float,
+    session_id: int,
+) -> None:
+    with open(probes_path, encoding="utf-8") as f:
         probes = json.load(f)
 
     retrievers = [
@@ -41,20 +40,35 @@ def run(probes_path: str, participant_id: str, current_time: float,
             session_id=probe.get("session_id", session_id),
             corpus=probe.get("corpus", "primary"),
         )
-        for r in retrievers:
-            ranked = r.retrieve(probe["query"], ctx, K)
+
+        for retriever in retrievers:
+            ranked = retriever.retrieve(probe["query"], ctx, K)
 
             extras = {}
-            if r.name == "D_typed":
-                extras["inferred_type"] = r.last_inferred_type
+            if retriever.name == "D_typed":
+                extras["inferred_type"] = retriever.last_inferred_type
 
-            record = build_record(probe, r.name, SEED, ranked, extras)
+            record = build_record(
+                probe,
+                retriever.name,
+                SEED,
+                ranked,
+                extras,
+            )
             append_record(record, OUT)
-            print(f"{probe['probe_id']}  {r.name:15s}  "
-                  f"gold_rank={record['gold_rank']}  "
-                  f"d@1={record['distractor_at_1']}")
+
+            print(
+                f"{probe['probe_id']}  "
+                f"{retriever.name:15s}  "
+                f"gold_rank={record['gold_rank']}  "
+                f"d@1={record['distractor_at_1']}"
+            )
 
 
 if __name__ == "__main__":
-    run("benchmark/probes.json", participant_id="PILOT",
-        current_time=5.0, session_id=5)
+    run(
+        "benchmark/probes.json",
+        participant_id="P01",
+        current_time=6.0,
+        session_id=6,
+    )

@@ -122,3 +122,84 @@ Does not count:
 Logs are authored rather than accumulated from E's own retrievals, so that all
 five conditions see identical presentation histories and no condition is
 evaluated against a store shaped by another condition's behaviour.
+
+### Recency category — structural constraint
+
+Under the activation model, recency is a property of a memory's presentation
+log, not its write session. B_i sums over presentations; session_id does not
+enter the equation.
+
+This makes clean recency probes structurally scarce in multi-session dialogue.
+A recency contrast requires an older memory whose subject is never revisited —
+but a subject that is never revisited is one the conversation had no reason to
+return to. Recurrence is simultaneously what makes an old memory a plausible
+recency competitor and what refreshes its presentation history.
+
+The corpus yields five probes where the distractor's last presentation
+precedes the gold's write session. The category is reported at five rather
+than twelve, and the constraint is stated as a finding about the task rather
+than a corpus deficiency. Whether it replicates on a public multi-session
+corpus is a question for the second corpus.
+
+### Corpus-level constraint on clean property isolation 
+
+Across three categories—presentation recency, repetition, and paraphrase—clean
+single-property contrasts proved scarce for the same underlying reason. In
+coherent multi-session dialogue, the features that drive activation tend to
+co-occur. Subjects that recur are refreshed rather than left stale, memories
+that receive repeated attention are often emotionally consequential, and
+memories that form strong relational lures frequently differ in salience or
+narrative role.
+
+Isolating one property would therefore require either accepting unequal probe
+counts or authoring additional exchanges specifically to satisfy benchmark
+constraints. This corpus takes the former approach. Additional exchanges are
+not introduced solely to equalize category sizes or manufacture isolated
+contrasts, since doing so would increasingly tune the corpus to the benchmark
+rather than preserve it as a coherent multi-session dialogue.
+
+Category-level results will be reported using their actual denominators.
+Interaction tags will identify cases where repetition, recency, salience, type,
+or another activation signal also differs between the gold and distractor.
+Clean probes and properties-in-tension probes will be reported separately.
+
+#### Presentation recency
+
+Under the activation model, recency is a property of a memory’s presentation
+log rather than its original write session. (B_i) sums over presentations;
+`session_id` does not enter the equation directly.
+
+A plausible older competitor is usually a memory whose subject later recurs.
+However, that recurrence also refreshes the memory’s presentation history and
+can eliminate the recency difference. The corpus therefore yields five clean
+presentation-recency probes in which the distractor’s most recent presentation
+precedes the gold memory’s write session.
+
+#### Repetition
+
+Repetition is also correlated with other activation signals. Memories whose
+subjects recur are often important, emotionally consequential, or part of an
+ongoing narrative thread. Some repetition probes therefore also contain
+salience differences or direct tension with recency.
+
+The repetition category retains twelve nonduplicated contests. Clean probes
+and probes tagged with interactions such as `repetition_vs_recency` or
+`repetition_plus_salience` will be analyzed separately.
+
+#### Paraphrase and low lexical overlap
+
+Only one paraphrase probe controls presentation count, most-recent
+presentation, memory type, and salience simultaneously: `P01_13` versus
+`P01_12`.
+
+The remaining paraphrase probes contain activation differences involving
+repetition, recency, salience, or type. They are retained as interaction probes
+and tagged with the signal favouring each memory. They do not test whether
+Condition E contains a dedicated paraphrase or relational-reasoning mechanism.
+Instead, they test whether non-semantic activation signals rescue—or interfere
+with—the relationally correct memory when dense similarity is drawn toward a
+plausible but incorrect competitor.
+
+The single activation-matched paraphrase probe will be identified separately,
+and the remaining results will be reported conditional on their interaction
+tags.

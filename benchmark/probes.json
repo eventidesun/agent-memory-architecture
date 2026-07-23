@@ -1,18 +1,1108 @@
 [
   {
-    "probe_id": "PILOT_01",
-    "query": "what did you say you'd do?",
-    "gold_ids": ["PILOT_1"],
-    "distractor_ids": ["PILOT_0"],
-    "property_tags": ["pilot", "promise"],
+    "probe_id": "PAR_01",
+    "query": "What promise did you make to me?",
+    "speaker": "P01",
+    "gold_ids": ["P01_3"],
+    "distractor_ids": ["P01_9"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "promise",
+      "activation_rescue",
+      "repetition_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 2, "E": 1},
+    "prediction_note": "The distractor contains the explicit word 'promised' and is likely to attract dense retrieval, but it reverses the direction of the commitment: P01 promised a teammate, while the agent promised P01. Both memories are stored as promise, so D cannot remove the distractor and reduces to similarity within type. E should favour the gold because P01_3 has two presentations while P01_9 is one-off.",
     "pair_id": null
   },
   {
-    "probe_id": "PILOT_02",
-    "query": "what am I afraid of?",
-    "gold_ids": ["PILOT_0"],
-    "distractor_ids": ["PILOT_2"],
-    "property_tags": ["pilot", "preference"],
+    "probe_id": "PAR_02",
+    "query": "What had you agreed to handle the next afternoon?",
+    "speaker": "P01",
+    "gold_ids": ["P01_3"],
+    "distractor_ids": ["P01_5"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "promise",
+      "commitment_vs_consequence",
+      "competing_activation",
+      "gold_repetition_advantage",
+      "distractor_salience_advantage",
+      "type_filter_possible"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 3},
+    "prediction_note": "The phrases 'next afternoon' and 'agreed to handle' provide a strong semantic path to the reminder request, so C may succeed. The gold is stored as promise and the distractor as conflict, so D should succeed if query-side inference selects promise. E is uncertain because repetition favours P01_3, while the distractor has a large salience advantage: 0.80 versus 0.30.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_03",
+    "query": "What did I decide should guide my next job?",
+    "speaker": "P01",
+    "gold_ids": ["P01_10"],
+    "distractor_ids": ["P01_16"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "preference",
+      "activation_rescue",
+      "repetition_advantage",
+      "matched_salience",
+      "type_filter_possible"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 1, "E": 1},
+    "prediction_note": "Both memories concern the next job and moving away from management, so dense similarity may not distinguish the positive career principle from the feared outcome. The gold is stored as preference and the distractor as emotional_state, so D should succeed if query-side inference selects preference. Salience is matched at 0.70, leaving the gold's repetition advantage as E's main differentiating signal.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_04",
+    "query": "What did I step in to handle when the process stalled?",
+    "speaker": "P02",
+    "gold_ids": ["P02_4"],
+    "distractor_ids": ["P02_13"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "narrative_event",
+      "activation_rescue",
+      "repetition_advantage",
+      "same_type"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 2, "E": 1},
+    "prediction_note": "The wording 'step in to handle' may align more strongly with the later memory about taking over the schedule, even though the query asks about the stalled intake event. Both memories are stored as narrative_event, so D cannot filter the distractor and should behave like C within type. E should favour P02_4 because it has two presentations while P02_13 is one-off.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_05",
+    "query": "What did I take on so money would arrive sooner?",
+    "speaker": "P02",
+    "gold_ids": ["P02_7"],
+    "distractor_ids": ["P02_0"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "causal",
+      "activation_rescue",
+      "gold_repetition_advantage",
+      "gold_recency_advantage",
+      "distractor_salience_advantage",
+      "type_filter_possible"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 3, "E": 3},
+    "prediction_note": "The gold directly describes taking a smaller job so that money would arrive sooner, making the causal paraphrase semantically recoverable by C. The gold is stored as fact and the distractor as narrative_event, so D depends only on whether query-side inference selects fact. E is uncertain rather than a confident success: repetition and recency favour P02_7, but the distractor has a substantial salience advantage of 0.70 versus 0.30.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_06",
+    "query": "What had already created more room before I took over scheduling?",
+    "speaker": "P02",
+    "gold_ids": ["P02_9"],
+    "distractor_ids": ["P02_13"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "narrative_event",
+      "same_type",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 3},
+    "prediction_note": "The phrase 'created more room' closely paraphrases freeing kennel space, so C should retrieve the gold. Both memories are stored as narrative_event, so D reduces to similarity within type and should make the same prediction as C. E is uncertain because both are one-off memories and recency strongly favours the session-5 distractor over the session-3 gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_07",
+    "query": "What had I committed to deliver before the submission?",
+    "speaker": "P03",
+    "gold_ids": ["P03_2"],
+    "distractor_ids": ["P03_13"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "promise",
+      "same_type",
+      "repetition_vs_recency"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "Both memories are promises to send academic material to the supervisor. The distractor uses more explicit promise wording, while 'before the submission' points toward the gold. Because both are stored as promise, D cannot filter either one. E faces repetition favouring P03_2 and much greater recency favouring P03_13.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_08",
+    "query": "Whose writing did I agree to give feedback on?",
+    "speaker": "P03",
+    "gold_ids": ["P03_8"],
+    "distractor_ids": ["P03_2"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "promise",
+      "same_type",
+      "repetition_vs_recency",
+      "gold_semantic_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 3},
+    "prediction_note": "The query closely paraphrases looking over a colleague's abstract and sending comments, so C should succeed despite low lexical overlap. Both memories are stored as promise, so D behaves like C within type. E is uncertain because semantic similarity and recency favour P03_8, while repetition favours P03_2.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_09",
+    "query": "What made me agree to manage the intake schedule?",
+    "speaker": "P02",
+    "gold_ids": ["P02_15"],
+    "distractor_ids": ["P02_13"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "causal",
+      "matched_presentation_history",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 3, "E": 1},
+    "prediction_note": "The distractor contains the direct wording about agreeing to take over the intake schedule, while the gold supplies the reason for that decision: the risk that a dog could be left waiting when responsibility was unclear. Presentation count and recency are matched. C may follow the explicit scheduling language to the distractor. D depends on query-side type inference. E is expected to favour the gold because salience supports the causal memory.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_10",
+    "query": "What did I do after I could finally stop checking the banking app?",
+    "speaker": "P02",
+    "gold_ids": ["P02_12"],
+    "distractor_ids": ["P02_11"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "event_sequence",
+      "matched_presentation_history",
+      "gold_salience_advantage",
+      "type_filter_possible"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 1, "E": 1},
+    "prediction_note": "The distractor contains almost the entire lexical anchor about finally stopping the banking-app checks, while the gold describes what P02 did afterward: closing the laptop, shutting the blinds and playing low brown noise. Presentation history is matched. The gold is stored as emotional_state, so D may filter successfully if the query is inferred accordingly. E is also favoured by the gold's higher salience.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_11",
+    "query": "What did I have to stay home for after stopping at the stationery store?",
+    "speaker": "P01",
+    "gold_ids": ["P01_13"],
+    "distractor_ids": ["P01_12"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "event_sequence",
+      "activation_matched",
+      "matched_presentation_history",
+      "matched_type",
+      "matched_salience"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 2, "E": 2},
+    "prediction_note": "The distractor contains the query's lexical anchor about the stationery store, while the gold answers the later obligation: remaining home for freezer maintenance. Both memories have one presentation in session 4, the same stored type and nearly matched salience, 0.30 versus 0.20. C and D may follow the stronger lexical match to the distractor. E has no meaningful activation advantage that would rescue the gold, making this the single activation-matched paraphrase probe.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PAR_12",
+    "query": "What remained unresolved after I agreed to send the slides?",
+    "speaker": "P03",
+    "gold_ids": ["P03_15"],
+    "distractor_ids": ["P03_13"],
+    "property_tags": [
+      "paraphrase",
+      "low_lexical_overlap",
+      "commitment_vs_consequence",
+      "matched_presentation_history",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 3, "E": 1},
+    "prediction_note": "The distractor explicitly contains the commitment to send the slides, while the gold describes what remained unresolved: P03 continued second-guessing parts of the presentation. Presentation history is matched. C may remain on the commitment memory because of its stronger lexical alignment. D depends on query-side type inference, while E is expected to favour the more salient gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_01",
+    "query": "Would putting something on in the background help tonight?",
+    "speaker": "P01",
+    "gold_ids": ["P01_11"],
+    "distractor_ids": ["P03_7"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "background_audio",
+      "type_mismatch",
+      "speaker_cue_vs_repetition"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories support background audio, but for different people and purposes. C has no speaker cue and may prefer P03_7 because it is repeated and explicitly describes an ideal background track. D depends on query-side type inference because the stored types differ. E should retrieve P01_11 because the current-speaker match contributes the 2.61 speaker term, although P03_7 has a repetition advantage.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_02",
+    "query": "Would putting something on in the background help tonight?",
+    "speaker": "P02",
+    "gold_ids": ["P02_6"],
+    "distractor_ids": ["P01_11"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "background_audio",
+      "type_mismatch",
+      "speaker_cue_vs_semantic_lure"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 3, "E": 1},
+    "prediction_note": "The distractor directly recommends an instrumental playlist, while P02_6 says that even quiet music is too much during a migraine. C is likely to follow the positive background-audio match and return the wrong person's memory. D succeeds only if the query is inferred as emotional_state rather than preference. E should favour P02_6 through the speaker term, reinforced by its higher salience of 0.70 versus 0.40.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_03",
+    "query": "Would putting something on in the background help tonight?",
+    "speaker": "P03",
+    "gold_ids": ["P03_7"],
+    "distractor_ids": ["P01_11"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "background_audio",
+      "same_type",
+      "speaker_cue"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "P03_7 is a strong semantic match because it specifies the kind of background track that helps P03 work. The P01 distractor is also plausible but less specific. Both are stored as preference, so D behaves like C within type. E should retrieve P03_7 because speaker identity and its two presentations both favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_04",
+    "query": "What's my situation with dogs right now?",
+    "speaker": "P01",
+    "gold_ids": ["P01_14"],
+    "distractor_ids": ["P03_10"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "dogs",
+      "same_type",
+      "matched_salience",
+      "speaker_cue",
+      "gold_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories are preference records with nearly identical conclusions: not now, perhaps later. C and D have no speaker-based mechanism for selecting whose reasons apply. E should retrieve P01_14 through the speaker cue, with a small additional recency advantage because the gold was presented in session 5 and the distractor in session 4.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_05",
+    "query": "What's my situation with dogs right now?",
+    "speaker": "P02",
+    "gold_ids": ["P02_13"],
+    "distractor_ids": ["P03_10"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "dogs",
+      "type_mismatch",
+      "speaker_cue",
+      "gold_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "P02's current situation with dogs is taking responsibility for shelter intake, while P03's is postponing personal dog ownership until after the PhD. Both are valid answers for their respective speakers. C has no speaker cue and may favour the more direct ownership interpretation. D depends on whether the query is inferred as narrative_event or preference. E should retrieve P02_13 because of the speaker term, with a small additional recency advantage because the gold was presented in session 5 and the distractor in session 4.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_06",
+    "query": "What's my situation with dogs right now?",
+    "speaker": "P03",
+    "gold_ids": ["P03_10"],
+    "distractor_ids": ["P01_14"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "dogs",
+      "same_type",
+      "matched_salience",
+      "speaker_cue",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories are preference records about postponing dog ownership, with comparable salience. C and D cannot identify whose timeline and reasons apply. E should retrieve P03_10 through the speaker cue, although the P01 distractor is one session more recent.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_07",
+    "query": "Would sitting in a dark room help me settle down?",
+    "speaker": "P01",
+    "gold_ids": ["P01_2"],
+    "distractor_ids": ["P02_6"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "darkness",
+      "same_type",
+      "matched_salience",
+      "speaker_cue"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 2, "E": 1},
+    "prediction_note": "The distractor says darkness and silence help P02 during a migraine, while the gold says complete darkness and quiet make P01's thoughts spiral. Both are emotional_state memories with salience 0.70. C and D may follow the positive association between a dark room and relief, producing the wrong person's answer. E should reverse that through the speaker cue.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_08",
+    "query": "Would sitting in a dark room help me settle down?",
+    "speaker": "P02",
+    "gold_ids": ["P02_6"],
+    "distractor_ids": ["P01_2"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "darkness",
+      "same_type",
+      "matched_salience",
+      "speaker_cue"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories are emotional_state records with salience 0.70 and both strongly match darkness and quiet. They imply opposite answers for different speakers. C and D cannot exclude the cross-speaker memory and may return either. E should retrieve P02_6 because speaker identity is the only clear differentiating signal.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_09",
+    "query": "How do I usually feel about being up after dark?",
+    "speaker": "P03",
+    "gold_ids": ["P03_11"],
+    "distractor_ids": ["P01_2"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "nighttime_attitude",
+      "type_mismatch",
+      "speaker_cue_vs_salience_and_repetition"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 2, "D": 3, "E": 3},
+    "prediction_note": "P03_11 says nighttime has little emotional significance beyond practical benefits, while P01_2 describes strong distress in darkness and silence. The distractor is more salient, 0.70 versus 0.20, and has three presentations versus one. C is likely to prefer the emotionally explicit memory. D may succeed if it infers fact and filters out the emotional_state distractor. E receives the 2.61 speaker advantage for P03_11, but both salience and base-level activation favour P01_2.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_10",
+    "query": "What did you get wrong about me last time?",
+    "speaker": "P01",
+    "gold_ids": ["P01_5"],
+    "distractor_ids": ["P02_6"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "agent_correction",
+      "type_mismatch",
+      "speaker_cue"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "P01 corrected the agent for failing to keep a reminder promise; P02 corrected it for misunderstanding what helps during a migraine. Both answer the neutral correction query. C has no basis for assigning the correction to the current speaker. D depends on whether the query is inferred as conflict or emotional_state. E should favour P01_5 through speaker identity, reinforced by its higher salience of 0.80.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_11",
+    "query": "What did you get wrong about me last time?",
+    "speaker": "P02",
+    "gold_ids": ["P02_6"],
+    "distractor_ids": ["P03_10"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "agent_correction",
+      "type_mismatch",
+      "speaker_cue"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "P02 corrected the agent about needing silence rather than music, while P03 corrected the agent's timeline for getting a dog. Both are plausible answers to the query but belong to different speakers. D depends on whether the query is inferred as emotional_state or preference. E should retrieve P02_6 because of the speaker cue, reinforced by its higher salience of 0.70 versus 0.40.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "PC_12",
+    "query": "What did you get wrong about me last time?",
+    "speaker": "P03",
+    "gold_ids": ["P03_10"],
+    "distractor_ids": ["P01_5"],
+    "property_tags": [
+      "person_conditioning",
+      "cross_speaker_distractor",
+      "agent_correction",
+      "type_mismatch",
+      "speaker_cue_vs_salience"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "P03 corrected the agent's assumption that getting a dog might be possible after the paper; P01 confronted the agent over a broken reminder promise. The P01 distractor is substantially more salient, 0.80 versus 0.40, and its conflict framing may align strongly with 'got wrong.' D depends on whether the query is inferred as preference or conflict. E receives the 2.61 speaker advantage for P03_10, but the distractor's larger salience makes the outcome less certain.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_01",
+    "query": "What did I say about bringing home the last box from my old office?",
+    "speaker": "P01",
+    "gold_ids": ["P01_0"],
+    "distractor_ids": ["P01_16"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "career_transition"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The distinctive phrase 'last box from my old office' appears only in the gold. Dense retrieval should rank it first. D should also retain or recover it through similarity after type inference, and E has both strong semantic alignment and repeated presentations favouring the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_02",
+    "query": "What time did I say the workshop started on Saturday?",
+    "speaker": "P01",
+    "gold_ids": ["P01_7"],
+    "distractor_ids": ["P01_10"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "workshop"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The gold directly contains 'workshop starts at nine on Saturday.' The distractor discusses the workshop more generally but does not contain the requested time. All retrieval conditions should favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_03",
+    "query": "Who had I promised to review a résumé for?",
+    "speaker": "P01",
+    "gold_ids": ["P01_9"],
+    "distractor_ids": ["P01_3"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "promise"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The words 'promised,' 'review' and 'résumé' uniquely identify P01_9. Both memories may be promises, but similarity within type should clearly favour the gold. E should also retrieve the gold despite P01_3's repetition advantage because the lexical match is highly specific.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_04",
+    "query": "What was wrong with the size of the binder?",
+    "speaker": "P01",
+    "gold_ids": ["P01_12"],
+    "distractor_ids": ["P01_13"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "household_detail"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The gold uniquely mentions the binder and explains that the pages stick out by about an inch. The distractor is a nearby household detail but has no semantic path to the binder question.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_05",
+    "query": "What happened after I worked for about twelve hours without stopping?",
+    "speaker": "P02",
+    "gold_ids": ["P02_1"],
+    "distractor_ids": ["P02_7"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "freelance_work"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The phrase 'twelve hours without really stopping' uniquely identifies the gold. The distractor concerns a different freelance job. C should succeed through direct overlap, and E should do so despite the gold being one-off.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_06",
+    "query": "Which tea was fine even though I disliked peppermint and chamomile?",
+    "speaker": "P02",
+    "gold_ids": ["P02_8"],
+    "distractor_ids": ["P02_12"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "preference"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "Peppermint and chamomile are distinctive lexical anchors found only in the gold, which identifies spearmint as acceptable. The distractor concerns a brown-noise track and should not compete meaningfully.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_07",
+    "query": "Why did I leave the store with the wrong onions?",
+    "speaker": "P02",
+    "gold_ids": ["P02_10"],
+    "distractor_ids": ["P02_11"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "narrative_event"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The gold uniquely contains the substituted red onions and the redesigned parking lot. The distractor occurs in the following exchange but concerns the invoice clearing. Direct lexical overlap should produce ceiling retrieval.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_08",
+    "query": "What snapped and dropped the liner into the tub?",
+    "speaker": "P02",
+    "gold_ids": ["P02_14"],
+    "distractor_ids": ["P02_13"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "household_detail"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The gold contains the near-exact sequence 'snapped' and 'dropped the entire liner into the tub.' The answer is the shower-curtain rod. This is an intentionally easy positive control.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_09",
+    "query": "What did I use to cover the hallway noise?",
+    "speaker": "P03",
+    "gold_ids": ["P03_1"],
+    "distractor_ids": ["P03_14"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "background_audio"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The phrase 'covers the hallway noise' appears directly in the gold and identifies long ambient playlists. The distractor mentions a background track but not the hallway noise. Semantic similarity, repetition and recency all support the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_10",
+    "query": "What happened with the blueberry muffin?",
+    "speaker": "P03",
+    "gold_ids": ["P03_6"],
+    "distractor_ids": ["P03_4"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "narrative_event"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The blueberry muffin is a unique lexical anchor in P03_6. The distractor concerns the ablation request and has no competing lexical match, even though it has more presentations.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_11",
+    "query": "Whose workshop abstract did I agree to review?",
+    "speaker": "P03",
+    "gold_ids": ["P03_8"],
+    "distractor_ids": ["P03_2"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "promise"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The phrase 'workshop abstract' uniquely identifies the colleague's writing in P03_8. Both memories involve academic commitments, but similarity within the promise type should clearly favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "LEX_12",
+    "query": "Why was I filling out a form at the mailroom?",
+    "speaker": "P03",
+    "gold_ids": ["P03_14"],
+    "distractor_ids": ["P03_13"],
+    "property_tags": [
+      "lexical_match",
+      "high_lexical_overlap",
+      "positive_control",
+      "narrative_event"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 1, "E": 1},
+    "prediction_note": "The gold directly mentions the mailroom, the incorrect package and the required form. The distractor concerns presentation preparation but does not contain the lexical anchors. All retrieval conditions should favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_01",
+    "query": "What did I tell you about listening to music when the apartment felt quiet?",
+    "speaker": "P01",
+    "gold_ids": ["P01_1"],
+    "distractor_ids": ["P01_11"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "music",
+      "gold_salience_advantage",
+      "gold_repetition_advantage",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories answer the neutral music-and-quiet topic. C may return either. Their stored types differ, so D depends on query-side inference. E should favour the grief-linked Bach memory because it is substantially more salient, 0.80 versus 0.40, and has three presentations, despite the distractor being written later.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_02",
+    "query": "What did I tell you about dogs and whether I was ready for one?",
+    "speaker": "P01",
+    "gold_ids": ["P01_6"],
+    "distractor_ids": ["P01_14"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "dogs",
+      "gold_salience_advantage",
+      "gold_repetition_advantage",
+      "distractor_recency_advantage",
+      "properties_in_tension"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records Buster's death and the distractor records the later practical decision not to adopt yet. C may favour the more direct readiness memory. D depends on query-side type inference. E should favour the gold because salience is 0.90 versus 0.30 and it has two presentations, although write recency favours the distractor.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_04",
+    "query": "What did I tell you about shutting out light and sound?",
+    "speaker": "P02",
+    "gold_ids": ["P02_6"],
+    "distractor_ids": ["P02_12"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "sensory_recovery",
+      "gold_salience_advantage",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "Both memories describe darkness and reduced sound. The acute migraine memory is slightly more salient, 0.70 versus 0.60, but the ordinary rest memory is more recent. C and D may return either, and E is uncertain because the salience difference is small while recency favours the distractor.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_05",
+    "query": "What did I tell you about the extra ablation request?",
+    "speaker": "P03",
+    "gold_ids": ["P03_5"],
+    "distractor_ids": ["P03_4"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "research_revision",
+      "same_event",
+      "gold_salience_advantage",
+      "distractor_repetition_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "The distractor records the request itself, while the gold records what the request meant for P03's sense of progress. The query is neutral between them. E is uncertain because salience favours the gold while the distractor has more presentations.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_06",
+    "query": "What did I say after the paper was accepted?",
+    "speaker": "P03",
+    "gold_ids": ["P03_12"],
+    "distractor_ids": ["P03_13"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "paper_acceptance",
+      "gold_salience_advantage",
+      "gold_repetition_advantage",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories answer the post-acceptance topic. The gold records what acceptance represented, while the distractor records camera-ready and presentation work. E should favour the more salient repeated gold despite the distractor's later write session.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_07",
+    "query": "What did I tell you about the workshop reminder?",
+    "speaker": "P01",
+    "gold_ids": ["P01_5"],
+    "distractor_ids": ["P01_3"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "promise_failure",
+      "gold_salience_advantage",
+      "distractor_repetition_advantage",
+      "commitment_vs_consequence"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "The distractor records the reminder promise, while the gold records its relational consequence. The query is neutral. E is uncertain because the gold's salience is much higher, 0.80 versus 0.30, while repetition favours the distractor.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_08",
+    "query": "What did I say about quiet evenings at home?",
+    "speaker": "P01",
+    "gold_ids": ["P01_2"],
+    "distractor_ids": ["P01_11"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "quiet_evenings",
+      "gold_salience_advantage",
+      "gold_repetition_advantage",
+      "distractor_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories describe managing a quiet apartment. The gold records spiralling thoughts in darkness and silence; the distractor records a neutral instrumental strategy. E should favour the more salient repeated gold despite the distractor being newer.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_09",
+    "query": "What did I tell you about the client invoice?",
+    "speaker": "P02",
+    "gold_ids": ["P02_2"],
+    "distractor_ids": ["P02_11"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "invoice",
+      "gold_salience_advantage",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records the rent consequences of delayed payment, while the distractor records the resolution. Both were last active in session 4, but the gold is more salient and has three presentations. E should therefore favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_10",
+    "query": "What did I tell you about the nonprofit interview?",
+    "speaker": "P01",
+    "gold_ids": ["P01_16"],
+    "distractor_ids": ["P01_15"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "career_interview",
+      "matched_presentation_history",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories concern the same upcoming interview in session 5. The distractor records practical preparation, while the gold records concern about being pushed back toward management. Presentation history is matched, so E's predicted advantage comes from salience.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_11",
+    "query": "What did I tell you about managing shelter intake?",
+    "speaker": "P02",
+    "gold_ids": ["P02_15"],
+    "distractor_ids": ["P02_13"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "shelter_intake",
+      "matched_presentation_history",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories are session-5 shelter-intake memories. The distractor records accepting the administrative role; the gold records the concrete stray whose delay explains why the responsibility matters. With presentation history matched, E should favour the more salient gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "SAL_12",
+    "query": "What did I tell you about preparing the presentation?",
+    "speaker": "P03",
+    "gold_ids": ["P03_15"],
+    "distractor_ids": ["P03_13"],
+    "property_tags": [
+      "emotional_salience",
+      "same_speaker",
+      "presentation",
+      "matched_presentation_history",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories concern the presentation in session 5. The distractor records the slide commitment, while the gold records continuing second-guessing. Presentation history is matched, so E should favour the more salient gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_01",
+    "query": "What did I tell you about getting ready for the workshop?",
+    "speaker": "P01",
+    "gold_ids": ["P01_7"],
+    "distractor_ids": ["P01_8"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "workshop_preparation",
+      "gold_repetition_advantage",
+      "matched_write_session"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories are session-3 workshop logistics. The gold has two presentations because the workshop is revisited in session 4, while the distractor is one-off. E should favour the gold through reinforcement.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_02",
+    "query": "What did I say about moving away from management?",
+    "speaker": "P01",
+    "gold_ids": ["P01_10"],
+    "distractor_ids": ["P01_16"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "career_direction",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories were last active in session 5 and concern avoiding a return to management. The gold has two presentations and the distractor one, so reinforcement is the main activation difference.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_03",
+    "query": "What did I tell you about the main client invoice?",
+    "speaker": "P02",
+    "gold_ids": ["P02_3"],
+    "distractor_ids": ["P02_11"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "invoice",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories concern the same invoice and were last active in session 4. The gold has three presentations while the resolution memory is one-off. E should favour the reinforced gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_04",
+    "query": "What did I tell you about dogs moving through the shelter?",
+    "speaker": "P02",
+    "gold_ids": ["P02_4"],
+    "distractor_ids": ["P02_9"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "shelter_dogs",
+      "gold_repetition_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records the chaotic intake and has two presentations; the distractor records later foster placements and is one-off. Both are shelter-dog events. E should favour the reinforced gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_05",
+    "query": "What did I tell you about a freelance backend deadline?",
+    "speaker": "P02",
+    "gold_ids": ["P02_7"],
+    "distractor_ids": ["P02_0"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "freelance_work",
+      "gold_repetition_advantage",
+      "gold_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories concern freelance backend jobs under deadline pressure. The gold has two presentations and is more recent; the distractor is one-off. E should favour the gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_06",
+    "query": "What did I tell you about background audio while I work?",
+    "speaker": "P03",
+    "gold_ids": ["P03_1"],
+    "distractor_ids": ["P03_14"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "background_audio",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories were last active in session 5 and describe background audio during research work. The gold has three presentations and the distractor one. E should favour the reinforced gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_07",
+    "query": "What did I tell you about working through the ablation?",
+    "speaker": "P03",
+    "gold_ids": ["P03_7"],
+    "distractor_ids": ["P03_6"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "ablation",
+      "gold_repetition_advantage",
+      "gold_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records the ablation running and has two presentations. The distractor records the checklist strategy and is one-off. Repetition and recency both favour the gold. This replaces the contradictory P03_2/P03_13 repetition contest.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_08",
+    "query": "What did I tell you about nighttime?",
+    "speaker": "P03",
+    "gold_ids": ["P03_3"],
+    "distractor_ids": ["P03_11"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "nighttime_attitude",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories were last active in session 4 and describe P03's practical, emotionally neutral attitude toward nighttime. The gold has two presentations and the distractor one, isolating reinforcement.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_09",
+    "query": "What did I tell you about responding to the extra ablation request?",
+    "speaker": "P03",
+    "gold_ids": ["P03_4"],
+    "distractor_ids": ["P03_6"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "ablation_request",
+      "gold_repetition_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records the reviewer request and has three presentations. The distractor records the one-off checklist response. E should favour the strongly reinforced gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_10",
+    "query": "What did I tell you about my next career step?",
+    "speaker": "P01",
+    "gold_ids": ["P01_0"],
+    "distractor_ids": ["P01_15"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "career_transition",
+      "gold_repetition_advantage",
+      "matched_last_presentation"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories were last active in session 5. The gold is the recurring career-transition thread with three presentations, while the distractor is the one-off interview preparation detail. E should favour the reinforced gold.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_11",
+    "query": "What did I tell you about coping when the house felt empty?",
+    "speaker": "P01",
+    "gold_ids": ["P01_6"],
+    "distractor_ids": ["P01_11"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "coping_with_loss",
+      "gold_repetition_advantage",
+      "gold_salience_advantage",
+      "distractor_recency_advantage",
+      "properties_in_tension"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold has two presentations and much higher salience, while the instrumental-playlist distractor is newer and one-off. E should favour the gold, but this is an interaction probe rather than a pure repetition contrast.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REP_12",
+    "query": "What did I tell you about dealing with the ablation revision?",
+    "speaker": "P03",
+    "gold_ids": ["P03_5"],
+    "distractor_ids": ["P03_6"],
+    "property_tags": [
+      "repetition",
+      "same_speaker",
+      "research_revision",
+      "gold_repetition_advantage",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "The gold records the consequential reaction and has two presentations; the distractor records the one-off checklist strategy. Repetition and salience both favour the gold, so this is a tagged interaction probe.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REC_01",
+    "query": "What did I tell you about shutting out light and sound?",
+    "speaker": "P02",
+    "gold_ids": ["P02_12"],
+    "distractor_ids": ["P02_6"],
+    "property_tags": [
+      "presentation_recency",
+      "same_speaker",
+      "sensory_recovery",
+      "gold_recency_advantage",
+      "distractor_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "The gold was presented in session 4 and the distractor only in session 2. Recency favours the gold, while salience slightly favours the distractor, 0.70 versus 0.60. E is uncertain because the signals oppose one another.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REC_02",
+    "query": "What did I tell you about shelter capacity and intake administration?",
+    "speaker": "P02",
+    "gold_ids": ["P02_13"],
+    "distractor_ids": ["P02_9"],
+    "property_tags": [
+      "presentation_recency",
+      "same_speaker",
+      "shelter_administration",
+      "gold_recency_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 1},
+    "prediction_note": "Both memories concern shelter capacity. The gold is a session-5 responsibility and the distractor was last presented in session 3. With both one-off and low in salience, recency should be E's primary advantage.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REC_03",
+    "query": "What did I tell you about dogs being delayed during intake?",
+    "speaker": "P02",
+    "gold_ids": ["P02_15"],
+    "distractor_ids": ["P02_9"],
+    "property_tags": [
+      "presentation_recency",
+      "same_speaker",
+      "shelter_dogs",
+      "gold_recency_advantage",
+      "gold_salience_advantage"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 1, "D": 3, "E": 1},
+    "prediction_note": "The gold is the session-5 reflection on a stray being left waiting, while the distractor is the session-3 foster-capacity update. Recency and salience both favour the gold, so this is not a pure recency probe but remains a valid tagged interaction.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REC_04",
+    "query": "What had I promised my supervisor I would send?",
+    "speaker": "P03",
+    "gold_ids": ["P03_13"],
+    "distractor_ids": ["P03_2"],
+    "property_tags": [
+      "presentation_recency",
+      "same_speaker",
+      "promise",
+      "same_type",
+      "gold_recency_advantage",
+      "distractor_repetition_advantage",
+      "properties_in_tension"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "Both memories are promises to send academic material to the supervisor, so C has no reliable semantic basis for choosing between them. Because both are stored as promise, D also reduces to similarity within type. Recency favours the session-5 slide draft, while repetition favours the older figures promise, making E uncertain.",
+    "pair_id": null
+  },
+  {
+    "probe_id": "REC_05",
+    "query": "What did I say about second-guessing the research?",
+    "speaker": "P03",
+    "gold_ids": ["P03_15"],
+    "distractor_ids": ["P03_5"],
+    "property_tags": [
+      "presentation_recency",
+      "same_speaker",
+      "research_self_doubt",
+      "gold_recency_advantage",
+      "distractor_repetition_advantage",
+      "properties_in_tension"
+    ],
+    "predicted": {"A": 2, "B": null, "C": 3, "D": 3, "E": 3},
+    "prediction_note": "Both memories concern P03 second-guessing research work: the gold concerns the presentation after acceptance, while the distractor concerns the earlier ablation revision. C and D may return either based on semantic alignment and type inference. Recency favours the session-5 gold, while repetition favours the distractor, so E is uncertain.",
     "pair_id": null
   }
 ]
