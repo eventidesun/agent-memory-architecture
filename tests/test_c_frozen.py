@@ -45,7 +45,7 @@ def load_expected(path=None):
 def test_c_frozen():
     seed()
     c = DenseRetriever()
-    ctx = Context(speaker=PID, current_time=0.0, session_id=1)
+    ctx = Context(speaker=PID, current_time=0.0, session_id=1, corpus=PID)
 
     failures = []
     for row in load_expected():

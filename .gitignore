@@ -22,3 +22,7 @@ chat_logs.csv
 results/raw
 
 chroma_store
+
+experiments/results/
+experiments/chroma_store/
+scratch*.py

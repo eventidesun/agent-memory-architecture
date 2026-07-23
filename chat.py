@@ -1,7 +1,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
-from memory import retrieve_memory, store_memory
+from memory import retrieve_memory, store_chat_memory
 from logger import log_message
 
 load_dotenv()
@@ -48,7 +48,7 @@ Keep responses concise (2-4 sentences). When providing codes or sequences, state
 
 def get_response(participant_id, session, condition, user_message, room=1, first_message=False):
     if condition == "memory":
-        past = retrieve_memory(participant_id, user_message)
+        past = retrieve_memory(f"chat_{participant_id}", user_message)
         if past:
             system = MEMORY_PROMPT + f"\n\nRelevant past exchanges with this traveler:\n{past}"
         else:
@@ -83,7 +83,7 @@ def get_response(participant_id, session, condition, user_message, room=1, first
     lumen_response = response.choices[0].message.content
 
     if condition == "memory":
-        store_memory(participant_id, user_message, lumen_response, session)
+        store_chat_memory(participant_id, user_message, lumen_response, session)
 
     log_message(participant_id, condition, session, "user", user_message)
     log_message(participant_id, condition, session, "lumen", lumen_response)

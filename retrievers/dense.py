@@ -25,7 +25,7 @@ class DenseRetriever:
     name = "C_dense"
 
     def retrieve(self, query: str, ctx: Context, k: int) -> list[ScoredMemory]:
-        raw = retrieve_scored(ctx.speaker, query, n_results=k)
+        raw = retrieve_scored(ctx.corpus, query, n_results=k)
 
         return [
             ScoredMemory(

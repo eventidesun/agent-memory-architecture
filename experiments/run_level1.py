@@ -39,6 +39,7 @@ def run(probes_path: str, participant_id: str, current_time: float,
             speaker=probe.get("speaker", participant_id),
             current_time=probe.get("current_time", current_time),
             session_id=probe.get("session_id", session_id),
+            corpus=probe.get("corpus", "primary"),
         )
         for r in retrievers:
             ranked = r.retrieve(probe["query"], ctx, K)

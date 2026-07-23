@@ -15,12 +15,10 @@ from typing import Protocol, runtime_checkable
 
 @dataclass(frozen=True)
 class Context:
-    # Current situation info
-    # A, B, C mostly ignore this while E uses all of it
-    speaker: str # who is speaking now — E's person-conditioning cue
-    current_time: float # "now" for decay computation
-    session_id: int # current session index
-
+    speaker: str
+    current_time: float
+    session_id: int
+    corpus: str
 
 @dataclass(frozen=True)
 class ScoredMemory:

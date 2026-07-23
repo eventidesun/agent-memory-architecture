@@ -1,0 +1,288 @@
+[
+  {
+    "speaker": "P01",
+    "session_id": 1,
+    "user_message": "I finally brought home the last box from my old office today. Leaving software management was the right decision, but now that I have time to breathe, I keep feeling like I should already know what comes next. I've been trying to leave it alone tonight and listen to one of my dad's old cello recordings instead.",
+    "agent_response": "Which recording did you put on?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 1,
+    "user_message": "One of the Bach suites he used to practice when I was growing up. Since he died last year, it changes from night to night—sometimes it feels like having him in the room again, and sometimes I have to turn it off halfway through.",
+    "agent_response": "That sounds difficult to predict.",
+    "presentation_log": [1.0, 2.0, 4.0]
+  },
+  {
+    "speaker": "P01",
+    "session_id": 1,
+    "user_message": "Tonight it's helping. I usually keep a lamp and something playing after sunset anyway. If the house gets completely dark and quiet, my thoughts start running in circles. I found a career-change workshop earlier, so at least I have that application to distract me.",
+    "agent_response": "When are you supposed to hear back?",
+    "presentation_log": [1.0, 2.0, 4.0]
+  },
+  {
+    "speaker": "P01",
+    "session_id": 1,
+    "user_message": "They said the response should arrive tomorrow. Could you remind me sometime tomorrow afternoon to check my email? Otherwise I'll either forget completely or refresh it every ten minutes.",
+    "agent_response": "Sure. I'll remind you tomorrow afternoon.",
+    "presentation_log": [1.0, 2.0]
+  },
+  {
+    "speaker": "P01",
+    "session_id": 2,
+    "user_message": "I checked the workshop email on my own and got accepted, which is good—but weren't you supposed to remind me this afternoon?",
+    "agent_response": "Yes. I missed it, and I'm sorry."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 2,
+    "user_message": "I'm happy I got in, but I was counting on you. I don't like being told something will be remembered and then watching it disappear, especially when I'm already trying to keep everything together.",
+    "agent_response": "You had every reason to expect me to remember."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 2,
+    "user_message": "It's probably landing harder because I found Buster's leash while cleaning this morning. He was my golden retriever, and it's been six months since he died. Between him and my dad, the house can feel painfully empty at night, so I keep reaching for music, plans, anything that fills the space.",
+    "agent_response": "Finding the leash must have brought a lot back.",
+    "presentation_log": [2.0, 5.0]
+  },
+  {
+    "speaker": "P01",
+    "session_id": 3,
+    "user_message": "The workshop starts at nine on Saturday. I'm in downtown London, so the bus ride should only take about fifteen minutes, but they're calling for rain and I still need to print the workbook.",
+    "agent_response": "Do you have a printer nearby?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 3,
+    "user_message": "I'll use the one at the library. I need to stop for oat milk afterward too. They said coffee would be provided at the workshop, but I can't stand coffee, so I'll probably bring tea.",
+    "agent_response": "What kind of tea?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 3,
+    "user_message": "Usually strong black tea with no sugar. Tonight I'm drinking it while the laundry runs because I promised one of my former teammates I'd review his résumé before tomorrow.",
+    "agent_response": "That sounds like a productive evening."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 4,
+    "user_message": "The workshop was better than I expected. The facilitator asked why I left management, and I realized I was tired of choosing jobs based on titles and promotions. I want the next thing I do to feel useful, even if it looks less impressive.",
+    "agent_response": "Did saying that aloud clarify anything?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 4,
+    "user_message": "A little. I walked home with one earbud in afterward. I don't always put on my dad's cello recordings now; sometimes a quiet instrumental playlist is enough to stop the apartment from feeling so silent without bringing up every memory at once.",
+    "agent_response": "More background than remembrance?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 4,
+    "user_message": "I also stopped at a stationery store on the way home because the facilitator recommended using a weekly planning sheet. I bought a binder without checking the size, so the pages stick out by about an inch.",
+    "agent_response": "Are you keeping it anyway?"
+  },
+  {
+    "speaker": "P01",
+    "session_id": 4,
+    "user_message": "Probably. Also, my freezer started making a clicking noise this morning. The landlord says maintenance will come Tuesday sometime between ten and noon, so I have to stay home for that.",
+    "agent_response": "At least they gave you a time window."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 5,
+    "user_message": "Someone at the park let me say hello to their golden retriever today and asked whether I'd ever get another dog. Maybe someday, but not while I'm still figuring out my work situation and living in this apartment.",
+    "agent_response": "It doesn't sound like you need to decide yet."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 5,
+    "user_message": "No, definitely not yet. For now I'm making tomato soup and sorting the box of old charging cables from my office. I have an informational interview with a nonprofit tech group next Thursday, so I should probably find my webcam charger before then.",
+    "agent_response": "That seems like a good reason to sort the box."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 1,
+    "user_message": "Finally sent that client build over. I'm doing freelance backend work right now, and every time a launch gets close, my sleep schedule basically disappears. I started this morning and somehow it's already almost two.",
+    "agent_response": "How bad was the final stretch?"
+  },
+  {
+    "speaker": "P02",
+    "session_id": 1,
+    "user_message": "About twelve hours without really stopping. Weirdly, I work better this late anyway. No messages coming in, no calls, and I can keep the room dark. Overhead lights trigger my migraines, so I usually work with the monitor dimmed and one tiny desk lamp. My keyboard's 'S' key started sticking halfway through, though.",
+    "agent_response": "That key would drive me insane.",
+    "presentation_log": [1.0, 2.0, 4.0]
+  },
+  {
+    "speaker": "P02",
+    "session_id": 1,
+    "user_message": "It nearly did. I'm ignoring it until tomorrow. Right now I'm refreshing my bank portal even though I know the invoice isn't going to appear five minutes after I send it. One client paying two weeks late can mess up my rent timing for the whole month.",
+    "agent_response": "When is this one officially due?",
+    "presentation_log": [1.0, 3.0, 4.0]
+  },
+  {
+    "speaker": "P02",
+    "session_id": 1,
+    "user_message": "Net-30, technically. That could mean thirty days, or it could mean whenever someone in accounting remembers I exist. I have a shelter shift at seven-thirty tomorrow, so I should probably stop staring at the screen and sleep.",
+    "agent_response": "Seven-thirty after this is rough."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 2,
+    "user_message": "The shelter was chaos this morning. Four dogs arrived almost together, and one of the newer volunteers got so upset about a stray that the intake forms just sat there. I ended up taking over the paperwork so the dogs could actually get checked and moved into kennels.",
+    "agent_response": "Did all four make it through intake?",
+    "presentation_log": [2.0, 3.0, 5.0]
+  },
+  {
+    "speaker": "P02",
+    "session_id": 2,
+    "user_message": "Eventually, yeah. Then my friend tried to get me to come to a local band show afterward. I made it about five steps inside before the bass started shaking the floor and the strobes hit me. Instant headache. I turned around before they even stamped my wrist.",
+    "agent_response": "Maybe some quiet music at home helped afterward?"
+  },
+  {
+    "speaker": "P02",
+    "session_id": 2,
+    "user_message": "No, that's not really what I meant. Loud music is worse, obviously, but once my head starts pounding, even quiet music feels like too much. I went home, closed the blackout curtains, and sat in complete silence for an hour.",
+    "agent_response": "You're right—I mixed that up. Darkness and silence, not music."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 3,
+    "user_message": "Still no sign of the main invoice. I picked up a smaller API patch job for a logistics app so I have something coming in sooner. I agreed to have it finished by Thursday, which should be manageable unless their documentation is lying to me.",
+    "agent_response": "Documentation would never do that."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 3,
+    "user_message": "Of course not. I grabbed a box of spearmint tea on the way home, so that's my plan for tonight. I can't stand peppermint or chamomile, but plain spearmint is fine for some reason.",
+    "agent_response": "How much of the patch is left?"
+  },
+  {
+    "speaker": "P02",
+    "session_id": 3,
+    "user_message": "Two endpoints and a few tests. The shelter also confirmed temporary homes for three dogs today, which should free up enough kennel space for the weekend. Once the background checks cleared, the rest was pretty straightforward.",
+    "agent_response": "Good timing before the weekend intake."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 4,
+    "user_message": "I tried curbside pickup today, and the store substituted red onions for the yellow ones I ordered. Then I got trapped in their redesigned parking lot because half the entrance is apparently a pickup lane now. I spent twenty minutes trying to leave with the wrong onions.",
+    "agent_response": "Please tell me dinner wasn't depending on them."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 4,
+    "user_message": "It was, so I gave up and made toast. But the client invoice finally cleared about an hour ago, which means I can stop opening my banking app every ten minutes.",
+    "agent_response": "Finally."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 4,
+    "user_message": "Seriously. Laptop is closed, blinds are shut, and I have a brown-noise track playing low enough that it barely registers. I'm doing absolutely nothing else tonight.",
+    "agent_response": "That sounds earned."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 5,
+    "user_message": "The shelter manager asked me to take over the weekend intake schedule permanently. It's unpaid, but I said yes. Their spreadsheet has three different date formats and no one marks foster capacity consistently, so I'm rebuilding it on Saturday.",
+    "agent_response": "You volunteered because the spreadsheet offended you."
+  },
+  {
+    "speaker": "P02",
+    "session_id": 5,
+    "user_message": "Honestly, a little. Before that, I have to replace my shower-curtain rod. It snapped this morning and dropped the entire liner into the tub while I was brushing my teeth.",
+    "agent_response": "Of course it did."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 1,
+    "user_message": "I finally sent my supervisor the revised methods section. I'm doing doctoral research in human-computer interaction, and we have a conference deadline on Friday, so I've spent most of today rerunning an analysis because one condition label was inconsistent.",
+    "agent_response": "Did the rerun change the results?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 1,
+    "user_message": "No, thankfully. I usually put on one of those long ambient playlists while I clean data—not because I'm particularly into the music, but it covers the hallway noise without pulling my attention away. The lab printer jammed while I was trying to print the new figures, though.",
+    "agent_response": "Were you able to get them printed?",
+    "presentation_log": [1.0, 3.0, 5.0]
+  },
+  {
+    "speaker": "P03",
+    "session_id": 1,
+    "user_message": "Eventually. I told my supervisor I'd send the polished figures by Friday afternoon, so tonight I'm just checking the labels and making sure every number matches the tables.",
+    "agent_response": "How many figures are left?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 1,
+    "user_message": "Three. I don't really mind whether I finish them at eight in the morning or eleven at night. Nighttime isn't especially calming or unpleasant to me; it's just when the work happens to get done.",
+    "agent_response": "Very practical."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 2,
+    "user_message": "The figures are finished and sent. My supervisor liked them, but one of the internal reviewers wants another ablation study before submission, which means rebuilding part of the experiment tomorrow.",
+    "agent_response": "Was the request reasonable?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 2,
+    "user_message": "Mostly. I was still annoyed when I read it. I've tied too much of my sense of progress to whether papers get accepted, so every additional experiment initially feels like evidence that the work wasn't rigorous enough.",
+    "agent_response": "Does that feeling pass once you start the revision?",
+    "presentation_log": [2.0, 4.0]
+  },
+  {
+    "speaker": "P03",
+    "session_id": 2,
+    "user_message": "Usually. I make a checklist and it becomes a technical problem again. I stopped at the campus café before heading home, and they accidentally gave me a blueberry muffin instead of the plain one I ordered. I ate it anyway.",
+    "agent_response": "A manageable error, at least."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 3,
+    "user_message": "The ablation is running now. I found a two-hour ambient track with no melody, which is ideal because I don't notice when it loops. Anything with lyrics makes me start following the words instead of working.",
+    "agent_response": "How long will the experiment take?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 3,
+    "user_message": "Probably another four hours. A colleague also asked me to look over her workshop abstract, and I agreed to send comments by Sunday. It should only take twenty minutes if she actually followed the template.",
+    "agent_response": "That sounds optimistic."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 3,
+    "user_message": "Maybe. I walked past a dog adoption event outside the library earlier and stayed for a few minutes. I'd like to have a dog eventually, but my apartment is small and I'm away for ten or twelve hours on lab days. It wouldn't be fair right now.",
+    "agent_response": "Maybe after this paper is submitted?",
+    "presentation_log": [3.0, 4.0]
+  },
+  {
+    "speaker": "P03",
+    "session_id": 4,
+    "user_message": "I keep thinking about what you said last time about getting a dog after the paper. It's much further off than that—probably after the PhD, when I have more space and a schedule that doesn't change every week. One deadline ending won't make me ready.",
+    "agent_response": "You're right. I made it sound much more immediate than it is."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 4,
+    "user_message": "I went for a run around nine last night while the experiment finished. I sometimes run after dark because the sidewalks are emptier and it's cooler, but I don't have any real attachment to nighttime itself.",
+    "agent_response": "How did the experiment turn out?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 4,
+    "user_message": "The result held, and the paper was accepted this morning. I didn't react much when I saw the email, but I've checked the acceptance page about six times. I know one publication shouldn't matter that much, but it feels like proof that the last several months produced something real.",
+    "agent_response": "That sounds like relief more than excitement."
+  },
+  {
+    "speaker": "P03",
+    "session_id": 5,
+    "user_message": "Mostly relief. Now I have camera-ready edits and a presentation to prepare, so the work just changed shape. I promised my supervisor I'd send a cleaned-up draft of the slides by next Wednesday.",
+    "agent_response": "Have you started the deck?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 5,
+    "user_message": "Only the title slide. Right now I'm at the mailroom because they put someone else's package in my locker, and apparently I have to fill out a form before they'll take it back. I'll work on the slides afterward with one of my background tracks on.",
+    "agent_response": "An unnecessary form before the necessary work."
+  }
+]

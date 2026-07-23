@@ -39,7 +39,7 @@
 
 We design each probe so that a system can only succeed for the RIGHT reason.
 
-### Embedder robustness — predictions, [July, 23rd, 2026]
+### Embedder robustness — predictions
 Written before running run_embedder_robustness.py.
 
 1. all-MiniLM-L6-v2 under L2 reproduces test_results.csv exactly,

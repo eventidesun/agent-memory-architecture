@@ -1,30 +1,33 @@
+import os
 import chromadb
 from dataclasses import dataclass
 
-client = chromadb.PersistentClient(path="./chroma_store")
+_ROOT = os.path.dirname(os.path.abspath(__file__))
+client = chromadb.PersistentClient(path=os.path.join(_ROOT, "chroma_store"))
 
-def get_or_create_collection(participant_id):
-    return client.get_or_create_collection(name=f"participant_{participant_id}")
 
-def store_memory(participant_id, user_message, lumen_response, session_id, metadata=None):
-    """Store one conversation exchange.
+def get_or_create_collection(name):
+    """One collection per corpus. All speakers in a corpus share it, so
+    speaker identity is a metadata cue rather than a storage partition."""
+    return client.get_or_create_collection(name=f"corpus_{name}")
 
-    Each memory is assigned a session ID when it is written, following
-    MAPPING_DECISIONS §5.3, decision 1. This avoids having to reconstruct
-    session information later.
 
-    The metadata argument is optional. By default, each memory stores the
-    speaker, session ID, timestamp, and labelling status. The batch labelling
-    process later adds the memory type, salience, and importance so that
-    labelling does not affect the live chat path.
+def store_memory(corpus_name, user_message, agent_response, session_id,
+                 speaker, memory_id, metadata=None,
+                 user_label="Participant", agent_label="Lumen"):
+    """Research path. Corpus, speaker, and memory ID are all explicit.
 
-    Because time is measured by session, the timestamp is the session number
-    stored as a float rather than a wall-clock time.
+    Time is measured in sessions, so timestamp is the session number as a
+    float, not wall-clock. Labels (type, salience, importance) are added by
+    the batch labelling pass, not here.
+
+    user_label / agent_label default to the values the frozen baseline was
+    embedded with. Do not change the defaults.
     """
-    collection = get_or_create_collection(participant_id)
+    collection = get_or_create_collection(corpus_name)
 
     base_metadata = {
-        "speaker": participant_id,
+        "speaker": speaker,
         "session_id": session_id,
         "timestamp": float(session_id),
         "labelled": False,
@@ -33,28 +36,37 @@ def store_memory(participant_id, user_message, lumen_response, session_id, metad
         base_metadata.update(metadata)
 
     collection.add(
-        documents=[f"Participant: {user_message}\nLumen: {lumen_response}"],
-        ids=[f"{participant_id}_{collection.count()}"],
+        documents=[f"{user_label}: {user_message}\n{agent_label}: {agent_response}"],
+        ids=[memory_id],
         metadatas=[base_metadata],
     )
 
 
-def retrieve_memory(participant_id, current_message, n_results=3):
-    # ── your existing function, UNCHANGED ──
-    collection = get_or_create_collection(participant_id)
+def store_chat_memory(participant_id, user_message, agent_response, session_id):
+    """Live-chat path: one collection per participant, auto-generated IDs.
+    Separate from the research path, which uses a shared per-corpus store."""
+    name = f"chat_{participant_id}"
+    collection = get_or_create_collection(name)
+    return store_memory(
+        corpus_name=name,
+        user_message=user_message,
+        agent_response=agent_response,
+        session_id=session_id,
+        speaker=participant_id,
+        memory_id=f"{participant_id}_{collection.count()}",
+    )
+
+
+def retrieve_memory(collection_name, current_message, n_results=3):
+    collection = get_or_create_collection(collection_name)
     if collection.count() == 0:
         return ""
     results = collection.query(
         query_texts=[current_message],
         n_results=min(n_results, collection.count())
     )
-    memories = results["documents"][0]
-    return "\n".join(memories)
+    return "\n".join(results["documents"][0])
 
-
-# ══════════════════════════════════════════════════════════
-# NEW below this line — the instrumented retrieval
-# ══════════════════════════════════════════════════════════
 
 @dataclass
 class ScoredMemory:
@@ -63,18 +75,19 @@ class ScoredMemory:
     distance: float
     rank: int
 
-def retrieve_scored(participant_id, current_message, n_results):
-    collection = get_or_create_collection(participant_id)
+
+def retrieve_scored(collection_name, current_message, n_results):
+    collection = get_or_create_collection(collection_name)
     if collection.count() == 0:
         return []
 
     results = collection.query(
         query_texts=[current_message],
         n_results=min(n_results, collection.count()),
-        include=["documents", "distances"]     # ← ask ChromaDB for distances explicitly
+        include=["documents", "distances"]
     )
 
-    ids       = results["ids"][0]
+    ids = results["ids"][0]
     documents = results["documents"][0]
     distances = results["distances"][0]
 

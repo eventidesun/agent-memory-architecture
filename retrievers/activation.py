@@ -29,7 +29,7 @@ class ActivationRetriever:
         self.reinforce = reinforce
 
     def retrieve(self, query: str, ctx: Context, k: int) -> list[ScoredMemory]:
-        collection = get_or_create_collection(ctx.speaker)
+        collection = get_or_create_collection(ctx.corpus)
         if collection.count() == 0:
             return []
 
