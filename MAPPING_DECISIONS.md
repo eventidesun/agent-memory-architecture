@@ -81,3 +81,44 @@ to shed, old, low-salience, unrepeated. Derived from corpus properties only; no
 probe outcomes are consulted.
 
 Computed by experiments/derive_tau.py: τ = 1.817
+
+### Benchmark construction — person-conditioning category 
+
+A probe belongs to the person-conditioning category only when every distractor
+is a valid answer to the same neutral query for some participant, and speaker
+identity is the information needed to select among them.
+
+Consequence: queries must be speaker-neutral. A query containing vocabulary
+distinctive to one participant's memories (e.g. naming a specific pet or
+instrument) is a lexical-match probe, not a person-conditioning probe.
+
+Under this rule, work and career was excluded as an overlap topic: all three
+participants discuss work, but the correct answer to a work question is a fact
+about that participant rather than a relational stance that a neutral query
+leaves ambiguous. Four topics qualify: background sound, dogs, darkness and
+nighttime, and corrections the agent has made.
+
+### Presentation logs — authoring rule
+Clarified 2026-07-23 following a systematic audit. The original wording
+("a memory receives an additional presentation in each later session where its
+subject is raised again") proved ambiguous: applied broadly it made most of the
+corpus repeated, applied narrowly it under-counted. The audit found the initial
+ten logs inconsistent with either reading. The rule below is the operational
+version, applied uniformly. Clarified before any probe existed and before any
+retrieval result depended on it.
+
+A memory receives one additional presentation for a later session only when that
+session returns to the same event, commitment, decision, or specific personal
+situation. Recurrence of a broad topic or domain alone does not count.
+
+Counts:
+  A reviewer requests an ablation in session 2, and session 3 reports that same
+  ablation running.
+
+Does not count:
+  A participant discusses one migraine episode in session 2 and later spends an
+  unrelated evening in a dark room in session 4.
+
+Logs are authored rather than accumulated from E's own retrievals, so that all
+five conditions see identical presentation histories and no condition is
+evaluated against a store shaped by another condition's behaviour.

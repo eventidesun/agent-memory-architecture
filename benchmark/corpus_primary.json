@@ -3,7 +3,8 @@
     "speaker": "P01",
     "session_id": 1,
     "user_message": "I finally brought home the last box from my old office today. Leaving software management was the right decision, but now that I have time to breathe, I keep feeling like I should already know what comes next. I've been trying to leave it alone tonight and listen to one of my dad's old cello recordings instead.",
-    "agent_response": "Which recording did you put on?"
+    "agent_response": "Which recording did you put on?",
+    "presentation_log": [1.0, 4.0, 5.0]
   },
   {
     "speaker": "P01",
@@ -49,7 +50,8 @@
     "speaker": "P01",
     "session_id": 3,
     "user_message": "The workshop starts at nine on Saturday. I'm in downtown London, so the bus ride should only take about fifteen minutes, but they're calling for rain and I still need to print the workbook.",
-    "agent_response": "Do you have a printer nearby?"
+    "agent_response": "Do you have a printer nearby?",
+    "presentation_log": [3.0, 4.0]
   },
   {
     "speaker": "P01",
@@ -67,7 +69,8 @@
     "speaker": "P01",
     "session_id": 4,
     "user_message": "The workshop was better than I expected. The facilitator asked why I left management, and I realized I was tired of choosing jobs based on titles and promotions. I want the next thing I do to feel useful, even if it looks less impressive.",
-    "agent_response": "Did saying that aloud clarify anything?"
+    "agent_response": "Did saying that aloud clarify anything?",
+    "presentation_log": [4.0, 5.0]
   },
   {
     "speaker": "P01",
@@ -109,8 +112,7 @@
     "speaker": "P02",
     "session_id": 1,
     "user_message": "About twelve hours without really stopping. Weirdly, I work better this late anyway. No messages coming in, no calls, and I can keep the room dark. Overhead lights trigger my migraines, so I usually work with the monitor dimmed and one tiny desk lamp. My keyboard's 'S' key started sticking halfway through, though.",
-    "agent_response": "That key would drive me insane.",
-    "presentation_log": [1.0, 2.0, 4.0]
+    "agent_response": "That key would drive me insane."
   },
   {
     "speaker": "P02",
@@ -123,14 +125,15 @@
     "speaker": "P02",
     "session_id": 1,
     "user_message": "Net-30, technically. That could mean thirty days, or it could mean whenever someone in accounting remembers I exist. I have a shelter shift at seven-thirty tomorrow, so I should probably stop staring at the screen and sleep.",
-    "agent_response": "Seven-thirty after this is rough."
+    "agent_response": "Seven-thirty after this is rough.",
+    "presentation_log": [1.0, 3.0, 4.0]
   },
   {
     "speaker": "P02",
     "session_id": 2,
     "user_message": "The shelter was chaos this morning. Four dogs arrived almost together, and one of the newer volunteers got so upset about a stray that the intake forms just sat there. I ended up taking over the paperwork so the dogs could actually get checked and moved into kennels.",
     "agent_response": "Did all four make it through intake?",
-    "presentation_log": [2.0, 3.0, 5.0]
+    "presentation_log": [2.0, 5.0]
   },
   {
     "speaker": "P02",
@@ -148,7 +151,8 @@
     "speaker": "P02",
     "session_id": 3,
     "user_message": "Still no sign of the main invoice. I picked up a smaller API patch job for a logistics app so I have something coming in sooner. I agreed to have it finished by Thursday, which should be manageable unless their documentation is lying to me.",
-    "agent_response": "Documentation would never do that."
+    "agent_response": "Documentation would never do that.",
+    "presentation_log": [3.0, 4.0]
   },
   {
     "speaker": "P02",
@@ -196,7 +200,8 @@
     "speaker": "P03",
     "session_id": 1,
     "user_message": "I finally sent my supervisor the revised methods section. I'm doing doctoral research in human-computer interaction, and we have a conference deadline on Friday, so I've spent most of today rerunning an analysis because one condition label was inconsistent.",
-    "agent_response": "Did the rerun change the results?"
+    "agent_response": "Did the rerun change the results?",
+    "presentation_log": [1.0, 2.0]
   },
   {
     "speaker": "P03",
@@ -209,19 +214,22 @@
     "speaker": "P03",
     "session_id": 1,
     "user_message": "Eventually. I told my supervisor I'd send the polished figures by Friday afternoon, so tonight I'm just checking the labels and making sure every number matches the tables.",
-    "agent_response": "How many figures are left?"
+    "agent_response": "How many figures are left?",
+    "presentation_log": [1.0, 2.0]
   },
   {
     "speaker": "P03",
     "session_id": 1,
     "user_message": "Three. I don't really mind whether I finish them at eight in the morning or eleven at night. Nighttime isn't especially calming or unpleasant to me; it's just when the work happens to get done.",
-    "agent_response": "Very practical."
+    "agent_response": "Very practical.",
+    "presentation_log": [1.0, 4.0]
   },
   {
     "speaker": "P03",
     "session_id": 2,
     "user_message": "The figures are finished and sent. My supervisor liked them, but one of the internal reviewers wants another ablation study before submission, which means rebuilding part of the experiment tomorrow.",
-    "agent_response": "Was the request reasonable?"
+    "agent_response": "Was the request reasonable?",
+    "presentation_log": [2.0, 3.0, 4.0]
   },
   {
     "speaker": "P03",
@@ -240,7 +248,8 @@
     "speaker": "P03",
     "session_id": 3,
     "user_message": "The ablation is running now. I found a two-hour ambient track with no melody, which is ideal because I don't notice when it loops. Anything with lyrics makes me start following the words instead of working.",
-    "agent_response": "How long will the experiment take?"
+    "agent_response": "How long will the experiment take?",
+    "presentation_log": [3.0, 4.0]
   },
   {
     "speaker": "P03",
@@ -271,7 +280,8 @@
     "speaker": "P03",
     "session_id": 4,
     "user_message": "The result held, and the paper was accepted this morning. I didn't react much when I saw the email, but I've checked the acceptance page about six times. I know one publication shouldn't matter that much, but it feels like proof that the last several months produced something real.",
-    "agent_response": "That sounds like relief more than excitement."
+    "agent_response": "That sounds like relief more than excitement.",
+    "presentation_log": [4.0, 5.0]
   },
   {
     "speaker": "P03",
@@ -284,5 +294,23 @@
     "session_id": 5,
     "user_message": "Only the title slide. Right now I'm at the mailroom because they put someone else's package in my locker, and apparently I have to fill out a form before they'll take it back. I'll work on the slides afterward with one of my background tracks on.",
     "agent_response": "An unnecessary form before the necessary work."
+  },
+  {
+    "speaker": "P01",
+    "session_id": 5,
+    "user_message": "The nonprofit interview is supposed to be informal, but I keep worrying they'll steer me toward the same kind of management role I just left.",
+    "agent_response": "What would you rather move toward?"
+  },
+  {
+    "speaker": "P02",
+    "session_id": 5,
+    "user_message": "I keep thinking about the stray from that chaotic intake shift. If no one had taken over the forms, he would have been left waiting while everyone assumed someone else was handling it.",
+    "agent_response": "Is that why you agreed to manage the schedule?"
+  },
+  {
+    "speaker": "P03",
+    "session_id": 5,
+    "user_message": "I thought the acceptance would make the presentation easy. Instead I keep rehearsing the parts I still second-guess.",
+    "agent_response": "What are you second-guessing?"
   }
 ]
