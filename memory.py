@@ -1,7 +1,7 @@
 import chromadb
 from dataclasses import dataclass
 
-client = chromadb.Client()
+client = chromadb.PersistentClient(path="./chroma_store")
 
 def get_or_create_collection(participant_id):
     return client.get_or_create_collection(name=f"participant_{participant_id}")

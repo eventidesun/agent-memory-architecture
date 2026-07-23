@@ -5,7 +5,7 @@ logging may change."""
 import csv
 import os
 
-import chromadb
+from memory import get_or_create_collection
 
 from retrievers.base import Context
 from retrievers.dense import DenseRetriever
@@ -28,8 +28,7 @@ PID = "diag01_frozen_test"
 
 def seed():
     """Seed exactly as diagnostic_f2.py did: documents + ids, no metadata."""
-    client = chromadb.Client()
-    col = client.get_or_create_collection(name=f"participant_{PID}")
+    col = get_or_create_collection(PID)
     if col.count() == 0:
         col.add(documents=list(MEMORIES.values()), ids=list(MEMORIES.keys()))
     return col
