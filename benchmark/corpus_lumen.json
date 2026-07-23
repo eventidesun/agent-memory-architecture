@@ -1,0 +1,21 @@
+[
+  {
+    "speaker": "PILOT",
+    "session_id": 1,
+    "user_message": "I hate the dark",
+    "agent_response": "I'll remember that."
+  },
+  {
+    "speaker": "PILOT",
+    "session_id": 4,
+    "user_message": "I promise I'll come back tomorrow",
+    "agent_response": "I'll hold you to it."
+  },
+  {
+    "speaker": "PILOT",
+    "session_id": 1,
+    "user_message": "My favourite colour is green",
+    "agent_response": "Noted.",
+    "presentation_log": [1.0, 2.0, 3.0]
+  }
+]

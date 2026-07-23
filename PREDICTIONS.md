@@ -38,3 +38,18 @@
 * C, Person conditioning (=2): assumes the two speakers' memories are worded similarly, so C cannot separate them by words alone.
 
 We design each probe so that a system can only succeed for the RIGHT reason.
+
+### Embedder robustness — predictions, [July, 23rd, 2026]
+Written before running run_embedder_robustness.py.
+
+1. all-MiniLM-L6-v2 under L2 reproduces test_results.csv exactly,
+   including P04 (gold M04 at rank 4, distractor M07 at rank 1).
+2. L2 and cosine produce identical rankings for both models, since
+   both normalize embeddings.
+3. BGE-small reproduces the P04 inversion — the surface alignment
+   between the casual probe and the dismissive memory is a property
+   of the content, not of MiniLM's geometry. Possible smaller margin,
+   since BGE is retrieval-tuned.
+
+If 3 fails: the Figure 1 claim narrows from "dense retrieval as a
+class" to a single-model finding, and the paper states this.
