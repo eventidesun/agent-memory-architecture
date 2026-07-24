@@ -7,16 +7,16 @@ import math
 from activation.params import D_BASE, MIN_ELAPSED
 
 
-def decay_rate(salience: float, lam: float) -> float:
-    return D_BASE * (1.0 - lam * salience)
+def decay_rate(salience: float, lam: float, d_base: float = D_BASE) -> float:
+    return d_base * (1.0 - lam * salience)
 
 
 def base_level(presentation_log: list[float], current_time: float,
-               salience: float, lam: float) -> float:
+               salience: float, lam: float, d_base: float = D_BASE) -> float:
     if not presentation_log:
         return float("-inf")
 
-    d = decay_rate(salience, lam)
+    d = decay_rate(salience, lam, d_base)
     total = sum(
         max(current_time - t_j, MIN_ELAPSED) ** (-d)
         for t_j in presentation_log

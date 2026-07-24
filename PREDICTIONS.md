@@ -53,3 +53,81 @@ Written before running run_embedder_robustness.py.
 
 If 3 fails: the Figure 1 claim narrows from "dense retrieval as a
 class" to a single-model finding, and the paper states this.
+
+## Scaling predictions (preregistered)
+
+Written before `experiments/run_scaling.py` exists and before any synthetic
+memories are generated. The scaling experiment grows the shared store with
+synthetic memories from additional speakers, holds the 64 probes and their
+gold memories fixed, and sweeps store size across approximately an order of
+magnitude (49 → ~530).
+
+Memory count and speaker count increase together. This models the deployment
+scenario the paper's motivation describes — an agent accumulating both more
+memories and more users — rather than isolating speaker count as an
+independent variable. Interpretations that depend on speaker count must be
+stated as consistent-with rather than caused-by.
+
+---
+
+**S1 — Dense retrieval degrades with store size.**
+Recall@3 for Condition C is expected to decrease as the memory store grows,
+because additional semantically similar memories increase competition during
+nearest-neighbour retrieval. Falsified if C remains approximately constant
+across the evaluated store sizes.
+
+**S2 — Full history becomes operationally infeasible.**
+Condition B is expected to maintain complete memory availability regardless of
+store size, but prompt size, latency, and inference cost are expected to
+increase approximately linearly with the number of stored memories. The
+purpose of measuring B is not to test whether these quantities increase — that
+is close to arithmetic — but to quantify the rate of increase and identify the
+point at which full-history prompting becomes impractical for deployment.
+
+**S3 — Activation retrieval degrades more gracefully.**
+Condition E is expected to lose less recall than Condition C as store size
+increases, because retrieval depends on presentation history, salience, and
+speaker identity in addition to semantic similarity.
+
+**S4 — The C–E gap widens under scale.**
+The performance difference between Conditions C and E is expected to increase
+as the shared memory store grows. This follows from E's use of non-semantic
+retrieval cues that continue to discriminate between competing memories even
+when semantic competition increases. Falsified if the difference between C and
+E remains approximately constant or decreases across the evaluated store sizes.
+
+**S5 — Category-specific degradation.**
+Degradation is expected to differ across benchmark categories:
+
+| Category | Expected trend |
+|---|---|
+| Lexical match | Minimal degradation |
+| Paraphrase | Moderate degradation |
+| Emotional salience | Smaller degradation for E than C |
+| Repetition | Larger advantage for E than C |
+| Person-conditioning | Largest increase in the C–E gap, although absolute recall for E is not necessarily expected to be high |
+
+The person-conditioning row predicts relative separation, not high absolute
+performance. E's person-conditioning recall at the corpus scale was 41.7%; a
+result that remains low while the gap over C widens confirms S5 rather than
+contradicting it.
+
+**S6 — Scaling preserves the qualitative ordering.**
+The qualitative differences observed between C and E on the original corpus are
+expected to persist across the evaluated store sizes. Absolute recall may
+decline for both architectures, but increasing distractor pressure is not
+expected to reverse their ordering on repetition-tagged probes.
+
+---
+
+**Scope.** These predictions concern the evaluated range only, approximately
+49 to 530 memories. No claim is made about behaviour beyond it. Any result
+stated in the paper should be phrased as "across the evaluated range" rather
+than as an unbounded trend.
+
+**Instrumentation.** The scaling runner writes one record per condition per
+store size, carrying both retrieval metrics (recall@k, MRR, gold rank,
+distractor-at-1) and operational metrics (prompt tokens, retrieval latency,
+estimated cost). One schema for all five conditions: for A, C, D, and E,
+prompt tokens counts the retrieved memories only; for B it counts the whole
+store. Analysis reads these records and recomputes nothing.
